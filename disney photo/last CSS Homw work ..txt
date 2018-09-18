@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title> home page </title>
+<style>
+/* size of the page X 940 Y 725 */
+
+.wrapper{width:940px;
+         height:725px;
+        border:1px solid black;
+        
+        }
+.nav_top {width:940px;
+       height:60px;
+      border:1px solid black; 
+      background:blue;}
+
+.clear_1{ clear: both;margin-top:10px;}
+
+
+.header {width:940px;
+       height:200px;
+      border:1px solid black;  
+      margin-top:10px;}
+
+.clear_2{ clear: both;margin-top:15px;}
+
+.headline_1 {width:280px;
+       height:216px;
+      border:1px solid black;  
+      margin-right:10px;
+      float:left;
+      background:#e5eefc;}
+
+.headline_2 {width:280px;
+       height:216px;
+      border:1px solid black;  
+      margin-right:10px;
+      float:left;
+      background:#e5eefc;}
+
+.rightcol_3 {width:350px;
+       height:216px;
+      border:1px solid black;  
+      float:left;
+      margin-left:3px;
+      background:#ff00ff;}
+.clear_3{ clear: both;margin-top:17px;}
+
+.bottomline_1{width:570px;
+       height:157px;
+      border:1px solid black;  
+      margin-right:10px;
+      float:left;
+      background:#e5eefc;}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper ">
+
+<div class="nav_top"><img src=" .png"></div>
+<div class ="clear_1"></div>
+<div class="header"></div>
+<div class ="clear_2"></div>
+<div class="headline_1"></div>
+<div class="headline_2"></div>
+<div class="rightcol_3"></div>
+
+<div class ="clear_3"></div>
+<div class="bottomline_1"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
