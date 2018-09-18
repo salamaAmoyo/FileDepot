@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact us</title>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet">
+
+<script>
+function myfocus(element){
+element.style.backgroundColor='#FFFF99';    
+}
+
+function myblur(element){
+element.style.backgroundColor='#fbfbfb';    
+}
+
+  function checkForm()
+ {
+     
+    var str="";
+    var nameReg = /^[A-Za-z]+$/;
+    var numberReg =  /^[0-9]+$/;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+ 
+     
+     /**********************/
+     /*     CHECK NAME     */
+     /**********************/
+
+     var fname=document.forms["contact_form"]["f_name"].value;
+     if (fname=="")
+      {
+       str+="First name must be filled<br>";
+      }
+
+     
+     else if (fname.length<2)
+      {
+       str+="First name is to short<br>";
+      }
+     
+     
+     else if(!nameReg.test(fname))
+        {
+           str+="First name is wrong<br>";
+        }
+
+
+     /****************************/
+     /*    CHECK PHONE NUMBER    */
+     /****************************/
+     var phone=document.forms["contact_form"]["phone"].value;
+     if (phone=="")
+      {
+       str+="Phone number must be filled<br>";
+      }
+
+
+    
+    else if (!numberReg.test(phone))
+    {
+       str+="phone contain illegal digits<br>";
+    }
+
+
+    else if ((phone.length<9 || phone.length>11))
+    {
+       str+="phone contain wrong number of digits<br>";
+    }
+
+
+     /****************************/
+     /*    CHECK EMAIL ADDRESS   */
+     /****************************/
+    var mail=document.forms["contact_form"]["email"].value;
+    if (mail=="")
+    {
+       str+="Email address must be filled<br>";
+    }
+
+
+    else if (!emailReg.test(mail))
+    {
+       str+="wrong e-mail address<br>";
+    }
+
+
+    /*********************************/
+     /*    CHECK IF ANY WRONG FIELD   */
+     /*********************************/
+     
+     if (str!="")
+      {
+       document.getElementById("error_box").style.display="block";
+       document.getElementById("error_content").innerHTML=str;
+       return false;
+      }
+  
+ }
+ 
+ 
+ 
+   function show_send()
+ {
+     var agree=document.forms["contact_form"]["agree"].checked;
+     var x=document.getElementById("sendMe");
+     if (!agree)
+      {
+       x.disabled = true;
+       x.style.opacity = 0.5;
+       x.style.cursor = "default";
+      }
+     else
+      {
+       x.disabled = false;
+       x.style.opacity = 1;
+       x.style.cursor = "pointer";
+      }
+
+ }
+
+
+</script>
+
+ </head>
+
+ <body>
+
+<div id="form-div">
+    
+<div class="red_box" id="error_box">
+    <div class="red_box_top">Error</div>
+    <div class="red_box_main" id="error_content"></div>
+</div>
+
+<form class="form" method="post" action="send_it.html" name="contact_form" onsubmit="return checkForm()">
+  
+    <input name="f_name" type="text" placeholder="Name" id="nameInput" onfocus="myfocus(this)" onblur="myblur(this)"/>
+  
+    <input name="phone" type="text" placeholder="Phone" id="telInput" onfocus="myfocus(this)" onblur="myblur(this)"/>
+    
+    <input name="email" type="text" placeholder="Email" id="emailInput" onfocus="myfocus(this)" onblur="myblur(this)"/>
+  
+    <textarea name="text" placeholder="Comment" id="messageInput" onfocus="myfocus(this)" onblur="myblur(this)"></textarea>
+    
+    <h3>Agree</h3><input type="checkbox" name="agree" onclick="show_send()"/>
+ 
+    <input type="submit" value="SEND" id="sendMe" disabled style="opacity:0.5;"/>
+ </form>
+</div>    
+
+ </body >
+</html>

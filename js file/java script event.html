@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+function lightOn(){
+  document.getElementById('poto').src='bulbon.gif';
+ document.getElementById('place').innerHTML='Bulb On';
+
+
+}
+
+function lightOff(){
+  document.getElementById('poto').src='bulboff.gif';
+ document.getElementById('place').innerHTML='Bulb Off';
+
+
+}
+
+</script>
+</head>
+<body>
+
+<img src="bulboff.gif" id="poto" onmouseover="lightOn()" onmouseout="lightOff()">
+
+<p id='place'></p>
+
+<p>In this case JavaScript changes the src (source) attribute of an image.</p>
+<script>
+
+</script>
+<button onclick="document.getElementById('myImage').src='bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='bulboff.gif'">Turn off the light</button>
+
+</body>
+</html>

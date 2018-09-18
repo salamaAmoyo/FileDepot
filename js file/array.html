@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var names=['dan','ran','yoni','lior','mikel'];
+var score=[];
+score[0]=50;
+score[1]=60;
+score[2]=80;
+score[3]=20;
+score[4]=80;
+var maxScore;
+var maxScoreIndex;
+maxScore=[0];
+maxScoreIndex=0;
+for(i=0;i<score.length;i++)
+{
+
+    if (score[i]>maxScore)
+   {
+     maxScore=score[i];
+     maxScoreIndex=i;
+    
+
+   }
+
+}
+
+document.write('the best score is :'+ maxScore+'it belongs to :'+names[maxScoreIndex]);
+
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

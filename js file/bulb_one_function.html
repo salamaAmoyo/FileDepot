@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>new file</title>
+        <meta charset="utf-8">
+  <script>
+
+   function change(pic,txt)
+   {
+   document.getElementById("mypic").src=pic;
+   document.getElementById("textid").innerHTML=txt;
+   }
+
+  </script>
+
+ </head>
+
+ <body>
+    <img src="bulboff.gif" id="mypic" onmousedown="change('bulbon.gif','bulb is on')" onmouseup="change('bulboff.gif','bulb is off')"/>
+	<h1 id="textid">bulb-off</h1>
+ 
+ </body>
+</html>

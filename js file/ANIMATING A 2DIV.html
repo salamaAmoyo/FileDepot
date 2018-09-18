@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+#myAnimation2 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+
+}
+#myAnimation3 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+
+}
+
+
+
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button> 
+</p>
+
+<div id ="myContainer">
+<div id ="myAnimation"></div>
+<div id ="myAnimation2" style="background:blue;"></div>
+<div id ="myAnimation3" style="background:green;"></div>
+
+</div>
+
+<script>
+
+ var pos = 0;
+  var i=2;
+function myMove() {
+  var elem = document.getElementById("myAnimation");  
+ var elem2 = document.getElementById("myAnimation2"); 
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos >350) {i*=-1;}
+
+     if (pos<0) {i*=-1;}
+      pos+=i; 
+      elem.style.top =pos+ 'px'; 
+      elem2.style.left =pos+ 'px'; 
+   
+  }
+}
+</script>
+
+</body>
+</html>

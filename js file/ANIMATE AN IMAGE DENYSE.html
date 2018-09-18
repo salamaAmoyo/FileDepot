@@ -1,0 +1,102 @@
+<! DOCTYPE html>
+<html>
+<head>
+<style>
+.container{width:450px;
+           height:450px;
+           border:1px solid black;
+           position:relative;
+           }
+
+
+.container img{position:absolute;}
+
+</style>
+<script>
+ var box=document.getElementById("box");
+ var vpos=0;
+ var hpos=0;
+function moveSmiley(){
+
+moveRight();
+
+function moveLeft(){
+  var left=setInterval(function(){
+   hpos-=1;
+   box.style.left=hpos+'px';
+  if (box.style.left==0+'px'&&   box.style.top==400+'px'){clearInterval (left);
+  box.style.background='url (sad_smiley.png)'
+
+ moveUp();
+
+ }
+,5);
+}
+
+
+}
+function moveRight(){
+ var right=setInterval(function() {
+ hpos+=1;
+ box.style.left=hpos + 'px';
+ if (box.style.left==400+'px'){
+  clearInterval(right);
+  box.style.background='url(sad_smiley.png)'
+
+
+    moveDown();
+
+  }
+
+  ,5);
+  }
+
+ }
+
+ function moveUp(){
+  var up=setInterval(function(){
+  vpos -= 1;
+  box.style.top=vpos+'px';
+ if (box.style.top== 0 + 'px'&&   box.style.left== 0 + 'px'){
+  clearInterval(up);
+  box.style.background='url(smiley.png)'
+  moveRight();
+
+  }
+ ,5);
+}
+}
+
+function moveDown(){
+ var down=setInterval(function(){
+ vpos+=1;
+ box.style.top= vpos + 'px';
+ if (box.style.top==400 + 'px'&&  box.style.left ==400 +'px'){
+ clearInterval(down);
+ box.style.background='url(smiley.png)'
+ moveLeft();
+
+  }
+ ,5);
+}
+
+}
+}
+moveSmiley();
+</script>
+</head>
+<body>
+
+
+
+<div class="container"><img src="smiley.png" id="box"></div>
+
+
+
+
+
+
+
+
+</body>
+</html>

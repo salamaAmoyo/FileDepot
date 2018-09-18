@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+var names=[];
+var score=[];
+var maxScore;
+var maxIndex;
+maxScore=[0];
+maxIndex=0;
+ for (a=0;a<=4;a++){
+     names=prompt('enter','names'); 
+
+ for (b=0;b<=4;b++) {
+
+     score=prompt('enter','scores');
+
+ for (i=0;i<=4;i++){
+
+  if (score[i]>maxScore){
+
+      maxScore=score[i];
+      maxIndex=i;
+}
+
+}
+
+
+}
+
+}
+document.write(maxScore+names[ maxIndex]);
+
+
+
+
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

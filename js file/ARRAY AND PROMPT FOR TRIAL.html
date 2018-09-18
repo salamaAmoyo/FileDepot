@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+  
+var names=[''];
+var score=[];
+var maxScore;
+var maxScoreIndex;
+maxScore=[0];
+maxScoreIndex=0;
+
+for(p=0;p<=2;p++){
+ names=(prompt("enter","character"));
+
+for(g=0;g<=2;g++){
+
+score=(prompt("enter","number"));
+
+
+for(i=0;i<3;i++)
+{
+
+    if (score[i]>maxScore)
+   {
+     maxScore=score[i];
+     maxScoreIndex=i;
+    
+
+   }
+
+}
+}
+}
+document.write('the best score is :' +maxScore+ 'it belongs to :'+names[maxScoreIndex]);
+
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

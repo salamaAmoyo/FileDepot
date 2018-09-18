@@ -1,0 +1,62 @@
+﻿<! DOCTYPE html>
+<html>
+<head>
+<script>
+
+
+var speed=2;
+ function movePic(){
+ var myImage=document.getElementById('pic'); 
+ 
+
+ if(i>350){speed*=-1;myImage.src="sad_smiley.png";}
+ else{   myImage.style.left=speed+"px";
+    myImage.style.right=speed+"px";
+    speed++;
+
+ 
+
+ }
+
+/* 
+ if(i<350){speed+=1;myImage.src="smiley.png"
+  myImage.style.bottom=speed+"px";
+  speed++;
+  }
+ }
+*/
+
+
+</script>
+<style>
+.container{width:400px;
+           height:400px;
+           border:1px solid black;
+           position:relative;
+           }
+
+
+.container img{position:absolute;}
+
+</style>
+</head>
+<body onload="setInterval('movePic()',10)">
+
+
+<div class="container"><img src="smiley.png" id="pic"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

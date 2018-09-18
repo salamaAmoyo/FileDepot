@@ -1,0 +1,56 @@
+﻿<! DOCTYPE html>
+<html>
+<head>
+<script>
+var i=0;
+var z=0;
+var speed=3;
+function starMoving()
+{ var myImage=document.getElementById('pic');
+  myImage.style.top=z+"px";
+  myImage.style.left=i+"px";
+  if(i<=400 && z<=0)i+=speed;                
+  if(i>=400 && z<=0)z+=speed; 
+  if(i>=0 && z>=400)i-=speed; 
+  if(i<=0)z-=speed; 
+}
+</script>
+
+
+
+
+
+
+</script>
+<style>
+.container{width:450px;
+           height:450px;
+           border:1px solid black;
+           position:relative;
+           }
+
+
+.container img{position:absolute;}
+
+</style>
+</head>
+<body onload="setInterval('starMoving()',10);">
+
+
+<div class="container"><img src="smiley.png" id="pic"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

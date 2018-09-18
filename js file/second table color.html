@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+table{margin:0 auto;border-collapse:collapse;}
+table tr td{border:5px solid red;width:50px;height:30px;text-align:center;font-size:16px;color:blue;}
+</style>
+<script>
+
+function go(x,y,color){
+var star="<table>";
+for (v=1;v<=y;v++)
+{
+   
+  star+="<tr>";
+
+  for(b=1;b<=x;b++)
+{
+ star+="<td style='border:5px solid "+color+" '>***</td>";
+
+}
+
+star+="</tr>";
+}
+
+star+="</table><br>";
+document.write(star);
+}
+go(5,5,"yellow");
+go(5,5,"yellow");
+go(5,5,"yellow");
+
+
+
+</script>
+
+
+</head>
+
+<body>
+
+</body>
+</html>

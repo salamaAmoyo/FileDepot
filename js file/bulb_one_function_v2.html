@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script type="text/javascript">
+
+   function chang(position)
+   {
+   if (position=="on"){pic="bulbon.gif";txt="Bulb is ON";}
+   if (position=="off"){pic="bulboff.gif";txt="Bulb is OFF";}
+   document.getElementById("mypic").src=pic;
+   document.getElementById("textid").innerHTML=txt;
+   }
+
+  </script>
+
+ </head>
+
+ <body>
+    <img src="bulboff.gif" id="mypic" onmouseover="chang('on')" onmouseout="chang('off')"/>
+	<h1 id="textid">bulb-off</h1>
+ 
+ </body>
+</html>

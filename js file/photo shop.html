@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+ var star="<table>";
+ 
+ var counter=0;
+
+  var x=(prompt("Amudot?",""));
+ 
+  var y=(prompt("shurot?",""));
+ 
+  for(m=1;m<=y;m++)
+{
+  star+="<tr>";   
+   
+  for(n=1;n<=x;n++)
+ 
+{
+ counter+=1;
+ star+="<td><img src='photo"+counter%20+".jpg'></td>";
+ 
+
+}
+ 
+
+  star+="</tr>";
+}
+  star+="</table>";
+ 
+  document.write(star); 
+ 
+ </script>
+  <style>
+  *{margin:0;padding:0;}
+   table{
+   margin:0 auto;
+   border-collapse:collapse;
+   }
+
+   table tr td{
+    border:3px solid red;
+	width:50px;
+	height:50px;
+	text-align:center;
+	font-family:arial;
+	font-size:20px;
+	color:blue;
+   }
+   img{display:block;}
+  </style>
+
+
+   </head>
+
+
+   <body>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<! DOCTYPE html>
+<html>
+<head>
+<script>
+<script>
+function myMove() {
+  var elem = document.getElementById("pic");   
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+
+</script>
+<style>
+.container{width:400px;
+           height:400px;
+           border:1px solid black;
+           position:relative;
+           }
+
+
+.container img{position:absolute;}
+
+</style>
+</head>
+<body>
+
+
+<div class="container"><img src="smiley.png" id="pic"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

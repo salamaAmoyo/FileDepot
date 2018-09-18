@@ -1,0 +1,59 @@
+﻿<! DOCTYPE html>
+<html>
+<head>
+<script>
+
+var i=0;
+var speed=2;
+ function movePic(){
+ var myImage=document.getElementById('pic'); 
+ 
+
+ if(i>350){speed*=-1;myImage.src="sad_smiley.png";}
+ 
+ if(i<0){speed*=-1;myImage.src="smiley.png";}
+
+
+    myImage.style.top=i+"px";
+    myImage.style.left=i+"px";
+    i+=speed;
+
+ 
+
+ 
+}
+
+
+</script>
+<style>
+.container{width:400px;
+           height:400px;
+           border:1px solid black;
+           position:relative;
+           }
+
+
+.container img{position:absolute;}
+
+</style>
+</head>
+<body onload="setInterval('movePic()',10)">
+
+
+<div class="container"><img src="smiley.png" id="pic"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

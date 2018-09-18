@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Stack - JhonBryce</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script>
+        /*
+        var str = "hello and good morning";
+        console.log(str.length);
+        console.log(str.charAt(7));
+        console.log(str.indexOf("go"));
+        console.log(str.lastIndexOf("o"));
+        console.log(str.substring(10, 14));
+        console.log(str.substr(6, 3));
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        console.log(str.split("o"));
+        console.log(str.replace("morn","even"));
+        */
+        function ChangeZeWord(word) {
+            return word.substring(0, 1).toUpperCase() + word.substring(1, word.length).toLowerCase();
+        }
+        var sentance = "hello how is your family";
+        var arr = sentance.split(" ");
+        sentance = "";
+        for (i = 0; i < arr.length; i++) sentance += ChangeZeWord(arr[i]) + " ";
+        document.write("<h1>" + sentance + "<h1>");
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+</body>
+</html>

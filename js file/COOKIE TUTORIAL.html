@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload=function(){
+ if(document.cookie.length !=0){
+ var nameValueArray=document.cookie.split("=");
+ document.bgColor=nameValueArray[1];
+ document.getElementById("pos").value=nameValueArray[1];
+}
+}
+function setColorCookie() {
+  var selectedcolor=document.getElementById("pos").value;
+    if(selectedcolor!="select colors"){document.bgColor=selectedcolor;
+    document.cookie="color="+selectedcolor+";expires=fri,5 Aug 2016,01:00:00 UTC;";
+   
+}
+}
+
+
+
+</script>
+</head>
+<body >
+<select id="pos" onchange="setColorCookie()">
+<option value="select colors">select colors</option>
+<option value="blue">blue</option>
+<option value="red">red</option>
+<option value="green">green</option>
+
+</select>
+</body>
+</html>
+>
+</body>
+</html>

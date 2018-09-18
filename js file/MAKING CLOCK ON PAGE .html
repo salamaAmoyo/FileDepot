@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<div id="myClock"></div>
+
+<script type="text/javascript">
+
+ function nowTime(x){
+
+     if (x < 10){
+          x = "0" + x;
+        }
+
+  return x ;
+}
+
+   function showTime(){
+    var Q= document.getElementById("myClock");
+    var d= new Date();
+    var h =nowTime(d.getHours()); 
+    var m = nowTime(d.getMinutes()); 
+    var s = nowTime(d.getSeconds());
+  
+    Q.innerHTML= h + ":" + m + ":" + s;
+}
+   showTime();
+</script>
+
+
+
+
+</body>
+</html>
