@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<img src="1.jpg" id="demo">
+<script>
+var images=new Array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg");
+var Caption=new Array("first","second","third","fourth","fifth");
+var image_number=0;
+var imageLength=images.length-1;
+
+function change(num){
+ image_number+=num;
+if(image_number > imageLength){
+  
+  image_number=0;
+
+ }
+  if(image_number < 0 ){
+   image_number=imageLength;  
+  
+  }
+    document.getElementById("demo").src=images[image_number];
+     var str=Caption[image_number];
+     var txt=str.charAt(0).toUpperCase();
+     var why=str.substring(1,Caption[image_number].length);
+      var x=document.getElementById("caption");
+       x.style.color="green";
+       x.innerHTML=txt+why;  
+}
+function auto(){
+
+setInterval("change(1)",2000);
+
+}
+
+</script>
+
+<table>
+  <tr>
+  <td align="left"><a href="JavaScript:change(-  1)">Previous</a></td>
+  <td align="right"><a href="JavaScript:auto(1)">Auto</a></td>
+  <td align="right"><a href="JavaScript:change(1)">Next</a></td>
+  </tr>
+
+  </table>
+
+<div id="caption"> </div>
+</body>
+</html>

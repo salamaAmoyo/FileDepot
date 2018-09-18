@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+
+</style>
+</head>
+<body>
+<img src="1.jpg" id="pic">
+<table>
+<script type="text/javascript">
+var image=new Array("1.jpg","2.jpg","3.jpg","4.jpg");
+var tracker=new Array("First","Second","Third","Fifth");
+var image_Number=0;
+var image_length=image.length-1;
+function change_image(num){
+  image_Number=image_Number+num;
+if(image_Number > image_length){image_Number=0;}
+if(image_Number < 0){image_Number=image_length;}
+document.getElementById("pic").src=image[image_Number];
+document.getElementById("tracker").innerHTML=tracker[image_Number];
+}
+function auto(){
+ setInterval("change_image(1)",5000);
+}
+</script>
+<tr style="color:red";>
+<td><a href="javascript:change_image(-1)">previous</a></td>
+<td align="left"><a href="javascript:change_image(1)">Next</a></td>
+<td align="left"><a href="javascript: auto()">auto</a></td>
+</tr>
+</table>
+<div id="tracker">
+
+</div>
+</body>
+</html>

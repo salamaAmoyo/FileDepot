@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function goTrafic(){
+ lightOn('red');
+ setTimeout(function(){lightOn('yellow')},1500);
+ setTimeout("lightOn('green')",3000);
+ setTimeout("lightOff('yellow')",3000);
+ setTimeout("lightOff('red')",3000);
+}
+ function stopTrafic(){
+ blinks('green',1000,4);
+  setTimeout("blinks('yellow',1000,1)",7000); 
+  setTimeout("lightOn('red')",8000);
+}
+ function blinks(col,speed,blinks){
+ for(var i=0; i<(blinks*2);i++){
+
+if(i%2==0){setTimeout("lightOn('"+col+"')",(i*speed));}
+else{setTimeout("lightOff('"+col+"')",(i*speed));}
+}
+
+}
+
+function lightOn(col){
+document.getElementById(col+'Light').style.display='block'; 
+
+}
+
+function lightOff(col){
+document.getElementById(col+'Light').style.display='none'; 
+
+}
+</script>
+<style>
+.box{position:relative;
+     width:208px;
+     height:243px;
+     margin-bottom:30px;
+     background:url('traficLight_structure.jpg');}
+     
+
+#redLight{width:65px;
+     height:65px;
+     background:red;
+     position:absolute;
+     top:24px;
+     left:72px;
+     border-radius:50%;
+     display:none;
+     }
+#yellowLight{width:65px;
+     height:65px;
+     background:yellow;
+     position:absolute;
+     top:92px;
+     left:72px;
+     border-radius:50%;
+     display:none;
+     }
+#greenLight{width:65px;
+     height:65px;
+     background:green;
+     position:absolute;
+     top:160px;
+     left:72px;
+     border-radius:50%;
+     display:none;
+     }
+</style>
+</head>
+<body>
+
+<div class="box"> 
+<div id="redLight"></div>
+<div id="yellowLight"></div>
+<div id="greenLight"></div>
+</div>
+<button onclick="goTrafic()">Go</button>
+<button onclick="stopTrafic()">stop</button>
+</body>
+</html>

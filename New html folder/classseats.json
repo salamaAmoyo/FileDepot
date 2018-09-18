@@ -1,0 +1,44 @@
+{
+	"room221":
+	
+		{
+		   "men" : 
+		    [ 
+		        { "Name":"Gilad", "row":3,"chair":1 },
+		        { "Name":"Toni", "row":2,"chair":5 },
+		        { "Name":"AmitC", "row":4,"chair":4 },
+		        { "Name":"Maor", "row":5,"chair":3 },
+		        { "Name":"Eran", "row":4,"chair":2 },
+		        { "Name":"Timor", "row":1,"chair":5 }
+		     ],  
+		
+		   "weman"  :
+		   [
+		        { "Name":"Liat", "row":2,"chair":1 },
+		        { "Name":"Tanya", "row":5,"chair":2 },
+		        { "Name":"Lina", "row":3,"chair":4 },
+		        { "Name":"Marlin", "row":6,"chair":3 }
+		   ]    
+		 },
+		 
+	"room223":
+	
+		{
+		   "men" : 
+		    [ 
+		        { "Name":"Dani", "row":3,"chair":1 },
+		        { "Name":"Ronni", "row":2,"chair":5 },
+		        { "Name":"Gil", "row":5,"chair":3 },
+		        { "Name":"Moshe", "row":4,"chair":2 },
+		        { "Name":"Alon", "row":1,"chair":5 }
+		     ],  
+		
+		   "weman"  :
+		   [
+		        { "Name":"Yael", "row":2,"chair":1 },
+		        { "Name":"Sharon", "row":5,"chair":2 },
+		        { "Name":"Anat", "row":3,"chair":4 },
+		        { "Name":"Glit", "row":6,"chair":3 }
+		   ]    
+		 }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+//cookie name=value; expires=monday,15-mar-12 12:00:00 GMT;
+
+
+var user_name;
+var expires=new Date();
+if((document.cookie=="")==false){
+
+var length=document.cookie.length-1;
+var message=document.cookie.substring(5,length);
+       
+
+document.write("<h2><center>Wellcome back,"+message+"!</center></h2>");
+}
+
+function check(){
+user_name=document.getElementById("name").value;
+expires.setFullYear(expires.getFullYear()+1);
+document.cookie=escape("name")+"="+escape(user_name)+";expires="+expires.toGMTString();
+
+alert(document.cookie);
+
+}
+</script>
+</head>
+<body>
+     Name:<input type="text" id="name"/>
+
+   <input type="submit" value="Enter" onclick="check()"/>
+
+</body>
+</html>

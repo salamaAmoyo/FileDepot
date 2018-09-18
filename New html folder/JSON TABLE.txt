@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Method</title>
+
+<style>
+    *{margin: 0;padding: 0;}    
+
+table{
+border-collapse:collapse;
+margin:20px auto;   
+}   
+    
+table td{
+font-family:arial;
+font-size:16px;
+width:120px;
+height:50px;
+text-align:center;
+border:2px solid gray;
+color:#000080;
+}   
+
+button{
+font-family:arial;
+font-size:16px;    
+padding:20px 40px;
+display:block;
+margin:30px auto;
+}
+
+</style>
+
+<script>
+    
+
+var places={
+    class221:
+            [
+                {name:"vika",gender:"f",row:1,chair:1},
+                {name:"Orel", gender:"m", row:1, chair:2},
+                {name:"Amit", gender:"m", row:1, chair:3},
+                {name:"Salama", gender:"m", row:1, chair:5},
+                {name:"Eli M", gender:"m", row:2, chair:1},
+                {name:"Stas", gender:"m", row:2, chair:2},
+                {name:"Tal", gender:"m", row:2, chair:3},
+                {name:"Eli", gender:"m", row:2, chair:4},
+                {name:"Dennis", gender:"m", row:2, chair:5}
+            ]
+ }
+
+function doClassDiagram(rows, chairs){
+    var str="<table>";
+    for (r=1;r<=rows;r++){
+        
+        str+="<tr>";
+        for (c=1;c<=chairs;c++){
+            str+="<td id='box"+r+c+"'></td>"    
+        }
+        str+="</tr>";
+    }
+    str+="</table>";
+    document.getElementById("wrapper").innerHTML=str;
+}
+    
+
+    
+</script>
+
+</head>
+
+<body onload="doClassDiagram(8,5)">
+
+
+<div class="wrapper" id="wrapper">
+   
+</div>
+<button onclick="placeStudents()">place students</button>
+
+</body>
+</html>

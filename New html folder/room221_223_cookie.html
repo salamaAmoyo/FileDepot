@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>new file</title>
+<meta charset="utf-8">
+
+<style>
+table{
+border-collapse:collapse;
+margin:20px auto;
+width:400px;   
+}   
+
+table td{
+font-family:arial;
+font-size:16px;
+border:1px solid #000000;
+color:#000000;
+padding:10px;
+}   
+
+.tableHeader{
+background:#000080;
+color:#ffffff;
+text-align:center;
+font-weight:bold;    
+}
+
+
+button{
+font-family:arial;
+font-size:16px;    
+padding:20px 40px;
+display:block;
+margin:30px auto;
+}
+
+h1{
+font-family:arial;
+font-size:26px;    
+color:#000080;    
+padding:30px 0;
+text-align:center;   
+}
+
+</style>
+
+<script>
+
+function doTable(collage,roomNum) {
+    var output = "<table><tr><td class='tableHeader'>Name</td><td class='tableHeader'>Row</td><td class='tableHeader'>Chair</td></tr>";
+    var i,bgcolor,rowNum=0;
+    var room;
+    //console.log(roomNum)
+    switch (roomNum)
+    {
+        case 221:room=collage.room221;break;
+        case 223:room=collage.room223;break;
+    }
+    
+    for(i = 0; i < room.men.length; i++) {
+        
+        if (rowNum%2==0)bgcolor = '#ffffff'; else bgcolor = '#d8d8d8';
+        
+        output +="<tr><td style=background:"+bgcolor+";>" + room.men[i].Name + "</td>" + 
+        "<td style=background:"+bgcolor+";>" + room.men[i].row + "</td>" +
+        "<td style=background:"+bgcolor+";>" + room.men[i].chair + "</td></tr>";
+        rowNum++;
+    }
+    
+    for(i = 0; i < room.weman.length; i++) {
+        if (rowNum%2==0)bgcolor = '#ffffff'; else bgcolor = '#d8d8d8';
+        output +="<tr><td style=background:"+bgcolor+";>" + room.weman[i].Name + "</td>" + 
+        "<td style=background:"+bgcolor+";>" + room.weman[i].row + "</td>" +
+        "<td style=background:"+bgcolor+";>" + room.weman[i].chair + "</td></tr>";
+        rowNum++;
+    }
+    
+    output+="</table>"
+    document.getElementById("box").innerHTML = output;
+    document.getElementById("classTitle").innerHTML = "Mediateck Class "+roomNum;
+    setCookie("classNumber", roomNum, 30)
+}
+
+
+
+ 
+
+function getDetails(roomNum){
+ 
+var xmlhttp = new XMLHttpRequest();
+var url = "classseats.json";
+
+xmlhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+    var studentDetails = JSON.parse(this.responseText);
+    //console.log(studentDetails);
+    doTable(studentDetails,roomNum);
+    }
+}
+
+xmlhttp.open("POST", url, true);
+xmlhttp.send();
+
+
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+
+function checkCookie() {
+    var classN = getCookie("classNumber");
+    //console.log(classN)
+    if (classN != "") { getDetails(parseInt(classN)); } 
+}
+
+
+ 
+ 
+
+ 
+</script>
+
+
+
+</head>
+
+<body onload="checkCookie()">
+<h1 id="classTitle"></h1>
+<div id="box"></div>
+
+<button onclick="getDetails(221)">Room 221</button>
+<button onclick="getDetails(223)">Room 223</button>
+    
+
+
+
+</body>
+</html>

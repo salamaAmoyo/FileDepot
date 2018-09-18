@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cookie</title>
+<meta charset="utf-8">
+
+<style>
+
+*{margin:0;padding:0}
+ 
+body{
+background:#808080;
+    
+}    
+    
+.wrapper{
+width:30%;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background:#e2e2e2;
+}    
+   
+.wrapper img{
+width:100%;
+}   
+
+
+.inputBox{
+width:80%;
+margin:30px auto;
+}
+
+h2{
+text-align:center;
+padding:30px 0;
+font-family:arial;
+font-size:38px;
+color:#000080;
+}
+
+
+.inputBoxSubmit{
+width:40%;
+margin:30px auto;
+}
+
+
+input{
+width:100%;
+height:50px;
+line-height:50px;
+font-family:arial;
+font-size:18px;
+color:#000080;
+box-sizing:border-box;
+padding-left:15px;
+border-radius:6px;
+border:1px solid #808080;
+} 
+
+.inputBoxSubmit input{
+background:#000080;
+color:#ffffff;
+padding-left:0;
+</style>
+
+<script>
+
+function checkUser(){
+    
+    var userEntered = document.forms["userlogin"]["username"].value;
+    var passwordEntered = document.forms["userlogin"]["password"].value;
+    
+    if (userEntered=="admin" && passwordEntered=="1234"){
+        
+       setCookie("membername", "Israel Israeli", 10); //look at setCookie function
+    }
+   return true; // loading the page again because there is no action in form    
+}
+
+
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+
+
+
+function getCookie(cname) {
+    var name = cname + "="; // העוגיה הרצויה
+    var ca = document.cookie.split(';'); // מערך של כל העוגיות
+    //console.log(ca);
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        //console.log(c);
+        while (c.charAt(0) == ' ') // למעשה כל אחד מהעוגיות מגיע עם רווח לפניו - מבטל את הרווח
+         {
+            c = c.substring(1);
+          //console.log(c);
+         }
+        if (c.indexOf(name) == 0) //מחזיר את הערך של העוגיה
+        {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+
+function checkCookie() {
+    var user = getCookie("membername");
+    if (user != "")
+     {
+        document.getElementById("formwrapper").style.display="none";
+        document.getElementById("nameTitle").innerHTML="Hello " + user;
+     }
+    else 
+     {
+        if (user != "" && user != null) //renewing the cookie
+         {
+            setCookie("membername", user, 10);
+         }
+     }
+}
+
+ //setCookie("test", "123456", 5);
+ //setCookie("test1", "123456", 5);
+
+
+</script>
+    
+</head>
+
+<body onload="checkCookie()">
+
+<div class="wrapper">
+    
+    <div class="header"><img src="form_header_s.jpg"></div>
+    
+    <h2 id="nameTitle"></h2>
+    
+    <div class="form" id="formwrapper">
+        <form name="userlogin" onsubmit="return checkUser();">
+            <div class="inputBox"><input type="text" name="username" placeholder="User Name"></div>
+            <div class="inputBox"><input type="password" name="password" placeholder="Password"></div>
+            <div class="inputBoxSubmit"><input type="submit" value="Love - In"></div>
+        </form>
+     </div>
+    
+</div>
+
+
+</body>
+</html>
