@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>my first java script </title>
+<script type="text/javascript">
+function salama(){
+var myValue = document.getElementById('myTextBox').value;
+if (myValue.length==0) {
+
+     alert('please enter a real value here!');
+  return;
+        }
+   var myTitle=document.getElementById('title');
+   myTitle.innerHTML=myValue;
+
+
+}
+</script>
+</head>
+
+<body>
+<p id="title">my first paragraph!</p>
+<input type="text" id="myTextBox"/>
+<input type="submit" value="click" onclick="salama()"/>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var x=prompt("enter ", "" )*1;
+var y=prompt("enter ", "" )*1
+ 
+ 
+ var index=0;
+
+var str="<table>";
+
+for (i=1;i<=y;i++)
+
+ { 
+  str+="<tr>";
+ for (v=1;v<=x;v++)
+{               
+  index++;
+  str+="<td>"+index+"</td>" ; 
+          
+          
+}
+
+str+="</tr>"
+
+}
+ str+="</table>"    
+                                  
+document.write(str);
+
+</script>
+
+<style>
+table {border-collapse:collapse; margin:0 auto;}
+
+ td{border :1px solid green;color:aqua;width:50px;height:50px; font-weight:bold;text-align:center;}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

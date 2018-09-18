@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+function salama(){
+
+var myName=document.getElementById('myTextBox').value;
+if (myName.lenght==0){
+
+aler('please enter real value');
+return }
+
+
+var amoyo=document.getElementById('danjuma');
+ amoyo.innerHTML=myName;
+
+
+
+
+}
+
+</script>
+</head>
+<body>
+<p id="danjuma">my first paragraph</p>
+
+
+<input type="text" id="myTextBox" />
+<input type="submit" value="submit" onclick="salama()"/>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
