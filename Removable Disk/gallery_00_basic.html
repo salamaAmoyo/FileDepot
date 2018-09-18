@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>jQuery Gallery</title>
+    <meta charset="utf-8">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    
+    $(document).ready(function{
+ var newImageSrc;                     
+$(".thumbs img").click(function(){
+ newImageSrc=$(this).attr("rel");                  
+   console.log(newImageSrc);                 
+    });
+});
+    
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        
+        body {
+            background: #202020;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        #images {
+            margin: 0 auto;
+            width: 500px;
+            height: 375px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #images img {
+            width: 500px;
+            height: 375px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        .thumbs {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #FFFF00;
+            margin: 10px auto;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>תמונות</h2>
+    <div id="images"><img src="images/big/a.jpg" alt="pic a" /></div>
+    <div class="thumbs">
+        <img src="images/small/a.jpg" rel="images/big/a.jpg" />
+        <img src="images/small/b.jpg" rel="images/big/b.jpg" />
+        <img src="images/small/c.jpg" rel="images/big/c.jpg" />
+        <img src="images/small/d.jpg" rel="images/big/d.jpg" />
+        <img src="images/small/e.jpg" rel="images/big/e.jpg" />
+        <img src="images/small/g.jpg" rel="images/big/g.jpg" />
+        <img src="images/small/h.jpg" rel="images/big/h.jpg" />
+        <img src="images/small/i.jpg" rel="images/big/i.jpg" />
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact us</title>
+    <meta charset="utf-8">
+    <style>
+        *{margin: 0px;padding: 0px;}
+        .box{
+            width: 50%;
+            height:300px;
+            margin: 20px auto;
+            background: blue;
+        }
+         .topButton{
+            width: 40px;
+            height:40px;
+            margin: 20px;
+            background:url('up_arrow.png');
+             background-size: 100%;
+             position: fixed;
+             bottom: 20px;
+             right: 20px;
+             display:none;
+            
+        }
+    </style>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('.topButton').click(function(){
+          $("html,body").animate({
+              scrollTop:0
+          },5000);
+          
+      });
+    });
+        
+  $(document).scroll(function(){
+    var y=$(this).scrollTop();
+      if(y>200){
+          $('.topButton').fadeIn(800);
+          
+      }else{
+         $('.topButton').fadeOut(800);  
+      }
+    });
+    </script>
+</head>
+
+<body>
+
+    <div class="topButton"> </div>
+<div class="box"> </div>
+<div class="box"> </div>
+<div class="box"> </div>
+<div class="box"> </div>
+<div class="box"> </div>
+<div class="box"> </div>
+<div class="box"> </div>
+
+</body>
+
+</html>

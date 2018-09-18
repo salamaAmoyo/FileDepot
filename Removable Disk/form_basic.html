@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact us</title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("input[type='submit']").click(function(){
+        $(".error").hide();
+        var names=$("#nameInput").val();
+        
+        var email=$("#emailInput").val();
+        
+        var telephone=$("#nameInput").val();
+        
+                var message=$("#nameInput").val();
+        
+        var inputValue=[names,email,telephone];
+        var inputMessage=["name","email adreess","phone number","message"];
+        if(inputValue[0]==" "){
+            
+            $("#nameInput").after("<span class='error'>"
+                                  please enter your"+inputMessage[0]+"</span>" );                  
+                                 
+        }
+        
+    });    
+        
+    });
+    </script>
+</head>
+
+<body>
+
+    <div id="form-div">
+        <form class="form" id="form1" action="javascript:void(0)">
+
+            <input type="text" class="feedback-input" placeholder="Name" id="nameInput" />
+
+            <input type="text" class="feedback-input" placeholder="Email" id="emailInput" />
+
+            <input type="text" class="feedback-input" placeholder="Phone" id="telInput" />
+
+            <textarea class="feedback-input" placeholder="Comment" id="messageInput"></textarea>
+
+            <input type="submit" value="SEND" />
+        </form>
+    </div>
+
+</body>
+
+</html>

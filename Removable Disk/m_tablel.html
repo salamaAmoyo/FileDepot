@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>New HMTL document by NewJect</title>
+        <script src="jquery-3.1.1.min.js"></script>
+        <style>
+            *{margin: 0;
+                padding: 0;}
+
+
+
+            .form_wrap{width: 30%;
+                border-radius: 10px;
+                border: 2px solid black;
+                margin: 100px auto;}
+
+
+
+            #rows,#cols{width: 50%;
+                display: block;
+                font-size: 24px;
+
+                margin: auto;}
+
+
+
+            #reset,#submit,#reset_data,#reset_last_value{
+                width: 30%;
+                font-size: 13px;
+                margin: 10px auto 0;
+                display: block;
+            }
+
+
+
+            .clear{clear: both;}
+            table{margin: 0 auto;
+                border-collapse: collapse;
+            }
+            table tr td{border: 1px solid black;}
+            td{width: 50px;
+                height: 50px;
+                text-align: center;
+                font-weight: bold;}
+            tr:first-child,tr td:first-child{background: salmon;}
+
+
+        </style>
+    </head>
+    <body>
+        <div class="form_wrap">
+
+            <form action="#" method="">
+                <input id='rows' type="text" placeholder="Rows" name="rows">
+                <input id='cols' type="text" placeholder="Columns" name="cols">
+
+                <input id='reset' type="reset">
+            </form>
+            <button id='submit'>Submit</button>
+            <button id='reset_data'>Reset Data</button>
+            <button id='reset_last_value'>Reset Last Value</button>
+            <div class="clear"></div>
+        </div>
+        <div id="upcome_table"></div>
+
+
+
+
+        <script>
+//javascript:void(0) stops the page from reloading
+            $(document).ready(function(){
+                var x=0,y=0,str='',ypos=0,xpos=0;
+
+
+
+
+                function buildChart(){
+                    str="<table>"
+                    for(i=0;i<=x;i++){
+                        str+='<tr>';
+                        for(j=0;j<=y;j++){
+                            str+='<td></td>'
+                        };
+                        str+='</tr>';
+                    };
+                    str+='</table>';
+
+                };
+//                Buttons
+                $('#reset').on('click',function(){
+                    x=0;
+                    y=0;
+                    str='';
+                    $('#upcome_table').html(""); 
+                });
+                $('#reset_data').on('click',function(){
+                   
+                    $('tr:gt(0)').find('td:gt(0)').html(""); 
+                });
+                $('#reset_last_value').on('click',function(){
+                    
+                    $('tr:eq('+ypos+')'+' td:eq('+xpos+')').html(""); 
+                });
+                $('#submit').on('click',function(){
+                    x=$('#rows').val();
+                    y=$('#cols').val();
+                    buildChart(x,y);
+                    $('#upcome_table').html(str);
+                    for(i=1;i<y+1;i++){
+                        //                    console.log(x,y)
+                        $('tr:first td:eq('+i+')').html(i);}
+                    for(i=1;i<x+1;i++){
+                        $("tr:eq("+i+")"+" td:first") .html(i)};
+
+
+                    //Beginning of hover function
+                    //                    in each table row greater than 0(from second) 
+                    //                    find the second td and aply hover on it
+                    $('tr:gt(0)').find('td:gt(0)').hover(function(){
+                        pos=$(this).index();
+
+
+                        //multiplication result on click
+                        $(this).on('click',function(){
+                            var pos=$(this).index();
+                            ypos=$(this).parent().find('td:first').html();
+                            xpos=$('table tr:first').find('td:eq('+pos+')').html();
+                            $(this).html(xpos*ypos);
+                            console.log(xpos,ypos);
+                        });
+
+
+                        //this Element red-background color
+                        $(this).css('background','red');
+                        //                        First td in every row turns blue
+                        $(this).parent().find('td:first').css({
+                            'background':'blue', 
+                            'color':'white'
+                        });
+                        //At the first table row changes the background to 
+                        //blue at the current positon
+                        $('table tr:first').find('td:eq('+pos+')').css({
+                            'background':'blue', 
+                            'color':'white' 
+                        })
+//                        Opposite to the previous function
+                    },function(){
+                        $(this).css('background','white');
+                        $(this).parent().find('td:first').css({
+                            'background':'salmon', 
+                            'color':'black'
+                        });
+                        $('table tr:first').find('td:eq('+pos+')').css({
+                            'background':'salmon', 
+                            'color':'black' 
+                        })
+
+                    });
+
+                });
+
+
+
+
+            });
+
+        </script>
+    </body>
+        </html>

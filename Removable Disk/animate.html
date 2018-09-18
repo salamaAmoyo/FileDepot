@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.1.1.min.js"> </script> 
+    <script>
+    $(document).ready(function(){
+   $("input[value='move']").click(function(){
+       
+       $("#box1").animate({"marginLeft":"700px","marginTop":"500px"},1000);
+         
+  
+    $("#box1").animate({"marginLeft":"10px","marginTop":"10px",height:'-=30px',width:'-=30px',borderRadius:'50%'},1000);
+ 
+    $("#box1").animate({"marginLeft":"700px",height:'+=30px'},1000);
+    $("#box1").animate({"marginTop":"700px",width:'+=30px'},1000);
+    $("#box1").animate({"marginLeft":"10px"},1000);
+    $("#box1").animate({"marginTop":"10px"},1000);   
+   });     
+        
+        
+    });
+    </script>
+    <style>
+        .wrapper{
+            width: 800px;
+            height: 600px;
+            background: green;
+           overflow: hidden; 
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: fuchsia;
+            margin: 10px 0 0 10px;
+            
+        } 
+         .box1{
+            width: 100px;
+            height: 100px;
+            background:aqua;
+            margin: 10px 0 0 10px;
+            
+        }    
+    
+    </style>
+</head>
+
+<body>
+    <input type="button" value="move">
+    <div class="wrapper">
+
+    <div id="box1" class="box1">
+  
+      
+        
+        
+        
+</div>  
+    
+    
+    
+    
+    </div>    
+</body>
+</html>

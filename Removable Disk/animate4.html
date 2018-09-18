@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.1.1.min.js"> </script> 
+    <script>
+    $(document).ready(function(){
+    $("input[value='moveFward']").click(function(){    
+  $("#box").animate({"marginLeft":"+=80"},500);  
+            
+    });
+     $("input[value='moveBkward']").click(function(){    
+  $("#box").animate({"marginLeft":"-=80"},500);  
+            
+    });
+     $("input[value= 'reset']").click(function(){    
+  $("#box").animate({"marginLeft":"0px"},500);  
+            
+    });
+        
+    });
+    </script>
+    <style>
+        .wrapper{+
+            width: 800px;
+            height: 600px;
+            background: green;
+           overflow: hidden; 
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: fuchsia;
+            margin: 10px 0 0 10px;
+            
+        }    
+    
+    </style>
+</head>
+
+<body>
+    <input type="button" value="moveFward">
+    <input type="button" value="moveBkward">
+    <input type="button" value="reset">
+    <div class="wrapper">
+  <div id="box" class="box">
+
+        
+        
+        
+         
+    
+    
+    
+    
+    </div>    
+</body>
+</html>
